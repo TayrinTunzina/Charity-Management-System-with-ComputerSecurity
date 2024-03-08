@@ -26,8 +26,8 @@
         <div class="nav_side">
             <a href="index.php">HOME</a>
             <a href="about.html">ABOUT US</a>
-            <a href="donate.html">DONATE</a>
             <a href="contact.html">CONTACT</a>
+            <a href="admin/login.php">LOGIN</a>
         </div>
     </nav>
     <!-- --------------------------------------------MAIN----------------------------------------------------------->
@@ -110,9 +110,8 @@
         </div>
         <div class="doc">
             <h3>Navigation</h3>
-            <a href="index.html">Home</a>
+            <a href="index.php">Home</a>
             <a href="about.html">About</a>
-            <a href="donate.html">Donate</a>
             <a href="contact.html">Contact</a>
         </div>
         <div class="contact">
