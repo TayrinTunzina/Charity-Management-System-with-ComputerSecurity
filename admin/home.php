@@ -25,13 +25,14 @@
               <span class="info-box-icon bg-info elevation-1"><i class="fas fa-blog"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Total Donors</span>
+              <span class="info-box-text">Total Donors</span>
                 <span class="info-box-number text-right">
-                  <?php 
-                    $blogs = $conn->query("SELECT id FROM `blogs` where status = '1' ")->num_rows;
-                    echo number_format($blogs);
-                  ?>
+                    <?php 
+                        $totalDonors = $conn->query("SELECT COUNT(*) as totalDonors FROM `users` WHERE role = 'donor'")->fetch_assoc()['totalDonors'];
+                        echo number_format($totalDonors);
+                    ?>
                 </span>
+
               </div>
               <!-- /.info-box-content -->
             </div>

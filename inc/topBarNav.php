@@ -1,3 +1,17 @@
+<style>
+  .user-img{
+        position: absolute;
+        height: 27px;
+        width: 27px;
+        object-fit: cover;
+        left: -7%;
+        top: -12%;
+  }
+  .btn-rounded{
+        border-radius: 50px;
+  }
+</style>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-navy">
             <div class="container px-4 px-lg-5 ">
                 <button class="navbar-toggler btn btn-sm" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -8,19 +22,39 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+
+                        <li class="nav-item">
+                        <div class="btn-group nav-link">
+                              <button type="button" class="btn btn-rounded badge badge-light dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                                <span><img src="<?php echo validate_image($_settings->userdata('avatar')) ?>" class="img-circle elevation-2 user-img" alt="User Image"></span>
+                                <span class="ml-3"><?php echo ucwords($_settings->userdata('firstname').' - '.$_settings->userdata('role')) ?></span>
+
+                                <span class="sr-only">Toggle Dropdown</span>
+                              </button>
+                              <div class="dropdown-menu" role="menu">
+                                <a class="dropdown-item" href="<?php echo base_url.'admin/?page=user' ?>"><span class="fa fa-user"></span> My Account</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="<?php echo base_url.'/classes/Login.php?f=logout' ?>"><span class="fas fa-sign-out-alt"></span> Logout</a>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="nav-item">
+                
+                    </li>
+
                         <!-- <li class="nav-item"><a class="nav-link" aria-current="page" href="?php echo base_url ?>">Home</a></li> -->
                         <!-- <li class="nav-item"><a class="nav-link" aria-current="page" href="?php echo base_url ?>causes.php">Causes</a></li>
                         <li class="nav-item"><a class="nav-link" aria-current="page" href="?php echo base_url ?>?p=events">Events</a></li> -->
-                        <?php 
+                        <!-- ?php 
                         $cat_qry = $conn->query("SELECT * FROM topics where status = 1  limit 3");
                         $count_cats =$conn->query("SELECT * FROM topics where status = 1 ")->num_rows;
                         while($crow = $cat_qry->fetch_assoc()):
                         ?>
-                        <li class="nav-item"><a class="nav-link" aria-current="page" href="<?php echo base_url ?>?p=articles&t=<?php echo md5($crow['id']) ?>"><?php echo $crow['name'] ?></a></li>
-                        <?php endwhile; ?>
-                        <?php if($count_cats > 3): ?>
-                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url ?>?p=view_topics">All Topics</a></li>
-                        <?php endif; ?>
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="?php echo base_url ?>?p=articles&t=?php echo md5($crow['id']) ?>">?php echo $crow['name'] ?></a></li>
+                        ?php endwhile; ?>
+                        ?php if($count_cats > 3): ?>
+                        <li class="nav-item"><a class="nav-link" href="?php echo base_url ?>?p=view_topics">All Topics</a></li>
+                        ?php endif; ?> -->
                         <!-- <li class="nav-item"><a class="nav-link" href="?php echo base_url ?>?p=about">About</a></li> -->
                     </ul>
                     <div class="d-flex align-items-center">
