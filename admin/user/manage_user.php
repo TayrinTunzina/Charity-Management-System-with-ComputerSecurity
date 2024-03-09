@@ -19,17 +19,28 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 			<form action="" id="manage-user">	
 				<input type="hidden" name="id" value="<?php echo isset($meta['id']) ? $meta['id']: '' ?>">
 				<div class="form-group">
-					<label for="name">First Name</label>
+					<label for="name">Name</label>
 					<input type="text" name="firstname" id="firstname" class="form-control" value="<?php echo isset($meta['firstname']) ? $meta['firstname']: '' ?>" required>
 				</div>
-				<div class="form-group">
+				<!-- <div class="form-group">
 					<label for="name">Last Name</label>
 					<input type="text" name="lastname" id="lastname" class="form-control" value="<?php echo isset($meta['lastname']) ? $meta['lastname']: '' ?>" required>
+				</div> -->
+				<div class="form-group">
+					<label for="role">Role</label>
+					<select name="role" id="role" class="form-control" required>
+						<option value="" <?php echo !isset($meta['role']) ? 'selected' : '' ?>>Select Role</option>
+						<option value="admin" <?php echo isset($meta['role']) && $meta['role'] === 'admin' ? 'selected' : '' ?>>Admin</option>
+						<option value="donor" <?php echo isset($meta['role']) && $meta['role'] === 'donor' ? 'selected' : '' ?>>Donor</option>
+					</select>
 				</div>
+				
 				<div class="form-group">
 					<label for="username">Username</label>
 					<input type="text" name="username" id="username" class="form-control" value="<?php echo isset($meta['username']) ? $meta['username']: '' ?>" required  autocomplete="off">
 				</div>
+
+
 				<div class="form-group">
 					<label for="password">Password</label>
 					<input type="password" name="password" id="password" class="form-control" value="" autocomplete="off" <?php echo isset($meta['id']) ? "": 'required' ?>>

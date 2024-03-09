@@ -8,9 +8,9 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link" aria-current="page" href="<?php echo base_url ?>">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" aria-current="page" href="<?php echo base_url ?>causes.php">Causes</a></li>
-                        <li class="nav-item"><a class="nav-link" aria-current="page" href="<?php echo base_url ?>?p=events">Events</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" aria-current="page" href="?php echo base_url ?>">Home</a></li> -->
+                        <!-- <li class="nav-item"><a class="nav-link" aria-current="page" href="?php echo base_url ?>causes.php">Causes</a></li>
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="?php echo base_url ?>?p=events">Events</a></li> -->
                         <?php 
                         $cat_qry = $conn->query("SELECT * FROM topics where status = 1  limit 3");
                         $count_cats =$conn->query("SELECT * FROM topics where status = 1 ")->num_rows;
@@ -21,12 +21,12 @@
                         <?php if($count_cats > 3): ?>
                         <li class="nav-item"><a class="nav-link" href="<?php echo base_url ?>?p=view_topics">All Topics</a></li>
                         <?php endif; ?>
-                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url ?>?p=about">About</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="?php echo base_url ?>?p=about">About</a></li> -->
                     </ul>
                     <div class="d-flex align-items-center">
                     </div>
                 </div>
-                <button class="btn btn-flat btn-primary" type="button" id="donation">Donation Now</button>
+                <button class="btn btn-flat btn-primary" type="button" id="donation">Donate Now</button>
                 <form class="form-inline ml-4 mr-2 pl-2" id="search-form">
                   <div class="input-group">
                     <input class="form-control form-control-sm form " type="search" placeholder="Search" aria-label="Search" name="search"  value="<?php echo isset($_GET['search']) ? $_GET['search'] : "" ?>"  aria-describedby="button-addon2">
