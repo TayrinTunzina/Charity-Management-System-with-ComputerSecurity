@@ -24,13 +24,13 @@ $data = json_decode($data);
 </style>
 <div class="card card-outline card-info">
 	<div class="card-header">
-		<h3 class="card-title"><?php echo isset($id) ? "Update ": "Create New " ?> cause</h3>
+		<h3 class="card-title"><?php echo isset($id) ? "Update ": "Create New " ?> campaign</h3>
 	</div>
 	<div class="card-body">
 		<form action="" id="cause-form">
 			<input type="hidden" name ="id" value="<?php echo isset($id) ? $id : '' ?>">
             <div class="form-group">
-				<label for="content" class="control-label">Cause Content</label>
+				<label for="content" class="control-label">Campaign Content</label>
                 <textarea name="content" id="" cols="30" rows="2" class="form-control form no-resize summernote"><?php echo isset($data->content) ? stripslashes(html_entity_decode($data->content)) : ''; ?></textarea>
 			</div>
             

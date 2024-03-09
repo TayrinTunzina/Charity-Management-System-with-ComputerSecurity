@@ -31,36 +31,36 @@
                         </p>
                       </a>
                     </li> 
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                       <a href="<?php echo base_url ?>admin/?page=maintenance/cause" class="nav-link nav-cause">
                         <i class="nav-icon fas fa-hands-helping"></i>
                         <p>
-                          Cause Content
+                          Campaign Content
                         </p>
                       </a>
-                    </li>
+                    </li> -->
                     <li class="nav-item dropdown">
                       <a href="<?php echo base_url ?>admin/?page=blogs" class="nav-link nav-blogs">
-                        <i class="nav-icon fas fa-blog"></i>
+                        <i class="nav-icon fas fa-calendar-day"></i>
                         <p>
-                          Blog List
+                          Campaign Posts
                         </p>
                       </a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                       <a href="<?php echo base_url ?>admin/?page=events" class="nav-link nav-events">
-                        <i class="nav-icon fas fa-calendar-day"></i>
+                        <i class="nav-icon fas fa-blog"></i>
                         <p>
                           Event List
                         </p>
                       </a>
-                    </li>
-                    <li class="nav-header">Maintenance</li>
+                    </li> -->
+                    <!-- <li class="nav-header">Maintenance</li> -->
                     <li class="nav-item dropdown">
                       <a href="<?php echo base_url ?>admin/?page=maintenance/topics" class="nav-link nav-topics">
                         <i class="nav-icon fas fa-th-list"></i>
                         <p>
-                          Topic List
+                          Donation List
                         </p>
                       </a>
                     </li>

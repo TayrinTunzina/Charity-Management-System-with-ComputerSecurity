@@ -25,7 +25,7 @@
               <span class="info-box-icon bg-info elevation-1"><i class="fas fa-blog"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Total Published Blogs/Posts</span>
+                <span class="info-box-text">Total Donors</span>
                 <span class="info-box-number text-right">
                   <?php 
                     $blogs = $conn->query("SELECT id FROM `blogs` where status = '1' ")->num_rows;
@@ -47,7 +47,7 @@
               <span class="info-box-icon bg-success elevation-1"><i class="fas fa-calendar-day"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Upcoming Events</span>
+                <span class="info-box-text">Ongoing Campaigns</span>
                 <span class="info-box-number text-right">
                 <?php 
                     $event = $conn->query("SELECT id FROM `events` where date(schedule) >= '".date('Y-m-d')."' ")->num_rows;
