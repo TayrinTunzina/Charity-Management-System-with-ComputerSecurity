@@ -20,11 +20,11 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 				<input type="hidden" name="id" value="<?php echo isset($meta['id']) ? $meta['id']: '' ?>">
 				<div class="form-group">
 					<label for="name">Name</label>
-					<input type="text" name="firstname" id="firstname" class="form-control" value="<?php echo isset($meta['firstname']) ? $meta['firstname']: '' ?>" required>
+					<input type="text" name="name" id="name" class="form-control" value="<?php echo isset($meta['name']) ? $meta['name']: '' ?>" required>
 				</div>
 				<!-- <div class="form-group">
 					<label for="name">Last Name</label>
-					<input type="text" name="lastname" id="lastname" class="form-control" value="<?php echo isset($meta['lastname']) ? $meta['lastname']: '' ?>" required>
+					<input type="text" name="lastname" id="lastname" class="form-control" value="?php echo isset($meta['lastname']) ? $meta['lastname']: '' ?>" required>
 				</div> -->
 				<div class="form-group">
 					<label for="role">Role</label>

@@ -15,6 +15,7 @@ class Login extends DBConnection {
 	public function index(){
 		echo "<h1>Access Denied</h1> <a href='".base_url."'>Go Back.</a>";
 	}
+	
 	public function login(){
 		extract($_POST);
 
@@ -32,6 +33,7 @@ class Login extends DBConnection {
 		return json_encode(array('status'=>'incorrect','last_qry'=>"SELECT * from users where username = '$username' and password = md5('$password') "));
 		}
 	}
+
 	public function logout(){
 		if($this->settings->sess_des()){
 			redirect('admin/login.php');

@@ -43,7 +43,7 @@
                 <tbody>
 				<?php 
 					$i = 1;
-					$qry = $conn->query("SELECT * FROM users WHERE role = 'donor' AND id != '1' AND id != '{$_settings->userdata('id')}' ORDER BY firstname ASC");
+					$qry = $conn->query("SELECT * FROM users WHERE role = 'donor' AND id != '1' AND id != '{$_settings->userdata('id')}' ORDER BY `name` ASC");
 					while($row = $qry->fetch_assoc()):
 				?>
 

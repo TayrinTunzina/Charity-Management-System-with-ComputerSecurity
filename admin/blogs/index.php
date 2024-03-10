@@ -37,7 +37,7 @@
 				<tbody>
 					<?php 
 					$i = 1;
-						$qry = $conn->query("SELECT b.*,concat(u.firstname,' ',u.lastname) as author from `blogs` b inner join `users` u on b.author_id = u.id order by unix_timestamp(b.date_created) desc ");
+						$qry = $conn->query("SELECT b.*,concat(u.name,'-',u.role) as author from `blogs` b inner join `users` u on b.author_id = u.id order by unix_timestamp(b.date_created) desc ");
 						while($row = $qry->fetch_assoc()):
 							foreach($row as $k=> $v){
 								$row[$k] = trim(stripslashes($v));
