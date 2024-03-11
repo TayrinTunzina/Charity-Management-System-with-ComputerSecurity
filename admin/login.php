@@ -33,16 +33,11 @@
               </div>
           </div>
           <div class="input-group mb-3">
-                <select class="custom-select" name="role" required>
-                    <option value="" selected>Select Role</option>
-                    <option value="admin">Admin</option>
-                    <option value="donor">Donor</option>
-                </select>
-                <div class="input-group-append">
-                    <div class="input-group-text">
-                        <span class="fas fa-chevron-down"></span>
-                    </div>
-                </div>
+              <select class="form-control" name="role" required>
+                  <option value="" selected>Select Role</option>
+                  <option value="admin">Admin</option>
+                  <option value="donor">Donor</option>
+              </select>
             </div>
           <div class="row">
               <div class="col-8">
