@@ -77,7 +77,7 @@
             </div>
             <div class="modal-body">
                 <!-- Add payment form with OTP verification -->
-                <form id="paymentForm">
+                <form id="paymentForm" action="otp.php" method="POST">
                     <div class="form-group">
                         <label for="paymentMethod">Payment Method:</label>
                         <select class="form-control" id="paymentMethod" name="paymentMethod">
@@ -116,12 +116,17 @@
                         <input type="number" class="form-control" id="amount" name="amount" required>
                     </div>
 
+                    <?php
+                    $otp=rand(00000, 99999);
+                    ?>
+
                     <div class="form-group">
-                        <label for="phone">Email:</label>
-                        <input type="tel" class="form-control" id="email" name="email" required>
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                        <input type="hidden" name="otp" value="<?php echo $otp; ?>">
                     </div>
 
-                    <button type="button" class="btn btn-primary" id="payButton">Pay</button>
+                    <button type="submit" class="btn btn-primary" id="payButton">Pay</button>
                 </form>
             </div>
         </div>
@@ -129,35 +134,23 @@
 </div>
 
 
-    <script>
-    document.getElementById('paymentMethod').addEventListener('change', function() {
-        var paymentMethod = this.value;
-        var cashPaymentOptions = document.getElementById('cashPaymentOptions');
-        var cardPaymentDetails = document.getElementById('cardPaymentDetails');
+<script>
+document.getElementById('paymentMethod').addEventListener('change', function() {
+    var paymentMethod = this.value;
+    var cashPaymentOptions = document.getElementById('cashPaymentOptions');
+    var cardPaymentDetails = document.getElementById('cardPaymentDetails');
 
-        if (paymentMethod === 'cash') {
-            cashPaymentOptions.style.display = 'block';
-            cardPaymentDetails.style.display = 'none';
-        } else if (paymentMethod === 'card') {
-            cashPaymentOptions.style.display = 'none';
-            cardPaymentDetails.style.display = 'block';
-        }
-    });
+    if (paymentMethod === 'cash') {
+        cashPaymentOptions.style.display = 'block';
+        cardPaymentDetails.style.display = 'none';
+    } else if (paymentMethod === 'card') {
+        cashPaymentOptions.style.display = 'none';
+        cardPaymentDetails.style.display = 'block';
+    }
+});
 
-    document.getElementById('payButton').addEventListener('click', function() {
-        var formData = new FormData(document.getElementById('paymentForm'));
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'send_otp.php', true);
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                alert('OTP sent successfully!');
-            } else {
-                alert('Failed to send OTP.');
-            }
-        };
-        xhr.send(formData);
-    });
 </script>
+
 
 <?php require_once(base_app.'inc/footer.php') ?>
 
