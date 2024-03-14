@@ -40,7 +40,7 @@ $(document).ready(function(){
                     if(resp.status == 'success'){
                         // Redirect based on user role
                         if(resp.role == 'admin'){
-                            location.replace(_base_url_+'admin');
+                            location.replace(_base_url_+'admin/index.php');
                         } else if(resp.role == 'donor'){
                             location.replace(_base_url_+'donor.php');
                         }

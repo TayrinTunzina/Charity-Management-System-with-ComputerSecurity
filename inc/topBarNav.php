@@ -60,7 +60,7 @@
                     <div class="d-flex align-items-center">
                     </div>
                 </div>
-                <button class="btn btn-flat btn-primary" type="button" id="donation">Donate Now</button>
+                <!-- <button class="btn btn-flat btn-primary" type="button" id="donation">Donate Now</button> -->
                 <form class="form-inline ml-4 mr-2 pl-2" id="search-form">
                   <div class="input-group">
                     <input class="form-control form-control-sm form " type="search" placeholder="Search" aria-label="Search" name="search"  value="<?php echo isset($_GET['search']) ? $_GET['search'] : "" ?>"  aria-describedby="button-addon2">

@@ -42,7 +42,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['role
                 header("Location: admin/index.php");
                 exit();
             } elseif ($role == 'donor') {
-                header("Location: user_index.php");
+                header("Location: udonor.php");
                 exit();
             }
         } else {
