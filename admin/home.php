@@ -8,11 +8,11 @@
               <div class="info-box-content">
                 <span class="info-box-text">Total Donations Today</span>
                 <span class="info-box-number text-right">
-                  <?php 
-                    $donation = $conn->query("SELECT sum(amount) as total FROM donations where date(date_created) = '".date('Y-m-d')."' ")->fetch_assoc()['total'];
+                <?php 
+                    $donation = $conn->query("SELECT sum(fund_raised) as total FROM donations")->fetch_assoc()['total'];
                     echo number_format($donation);
-                  ?>
-                  <?php ?>
+                ?>
+
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -51,9 +51,10 @@
                 <span class="info-box-text">Ongoing Campaigns</span>
                 <span class="info-box-number text-right">
                 <?php 
-                    $event = $conn->query("SELECT id FROM `events` where date(schedule) >= '".date('Y-m-d')."' ")->num_rows;
-                    echo number_format($event);
+                  $active_blogs = $conn->query("SELECT COUNT(*) as total FROM `blogs` WHERE status = '1'")->fetch_assoc()['total'];
+                  echo number_format($active_blogs);
                   ?>
+
                 </span>
               </div>
               <!-- /.info-box-content -->

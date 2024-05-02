@@ -52,9 +52,9 @@
 							<td ><p class="m-0"><?php echo $row['author'] ?></p></td>
 							<td class="text-center">
                                 <?php if($row['status'] == 1): ?>
-                                    <span class="badge badge-success">Published</span>
+                                    <span class="badge badge-success">Active</span>
                                 <?php else: ?>
-                                    <span class="badge badge-danger">Unpublished</span>
+                                    <span class="badge badge-danger">Inactive</span>
                                 <?php endif; ?>
                             </td>
 							<td align="center">

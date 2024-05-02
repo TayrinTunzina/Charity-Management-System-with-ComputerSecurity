@@ -46,7 +46,9 @@
                 echo '<div class="progress" style="height: 18px; width: 75%">';
                 echo '<div class="progress-bar bg-success" role="progressbar" style="width: ' . $percentage . '%" aria-valuenow="' . $percentage . '" aria-valuemin="0" aria-valuemax="100">' . number_format($row['fund_raised']) . ' / ' . number_format($row['fund_goal']) . '</div>';
                 echo '</div><br>';
-                echo '<a href="' . base_url . $row['blog_url'] . '" target="_blank" class="btn btn-primary">Read More</a>';
+                //echo '<a href="' . base_url . $row['blog_url'] . '" target="_blank" class="btn btn-primary">Read More</a>';
+                echo '<a href="' . base_url . $row['blog_url'] . '" class="btn btn-primary">Read More</a>';
+
                 
                 // Disable the donate button and change status to inactive if fund goal is reached
                 if ($percentage >= 100) {
