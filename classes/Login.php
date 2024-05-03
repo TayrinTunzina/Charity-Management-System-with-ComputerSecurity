@@ -52,6 +52,9 @@ class Login extends DBConnection {
                     $this->settings->set_userdata($k, $v);
                 }
             }
+            // Inside your login logic
+            $_SESSION['role'] = $row['role']; // Store the user's role in the session
+
             // Return success status
             return json_encode(array('status'=>'success', 'role' => $row['role']));
         } else {

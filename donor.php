@@ -1,4 +1,9 @@
-<?php require_once('config.php'); ?>
+<?php require_once('config.php'); 
+// Check if the user is not logged in and redirect to the login page
+if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'donor') {
+    redirect('index.php');
+}
+?>
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
