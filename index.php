@@ -35,7 +35,7 @@
         <div class="main_content">
             <h2>“Giving is not just about making a donation. It is about making a difference.”
                 <br>
-                <span>Give a helping hand to children who NEED it!</span>
+                <span>Give a helping hand to poor who NEED it!</span>
             </h2>
             <div class="btn">
                 <a href="donate.html">DONATE NOW</a>
@@ -43,21 +43,21 @@
         </div>
     </div>
     <!-- --------------------------------------------SIDE----------------------------------------------------------->
-    <div class="side">
+    <!-- <div class="side">
         <div class="left">
             <img src="images/side.jpg">
         </div>
         <div class="right">
-            <h2>HELP A CHILD TODAY</h2>
+            <h2>EXTEND A HAND TO THE NEEDY TODAY</h2>
             <p>
-                Service to man is service to God. Charity Jet cares for needy children by empowering their caregivers to do their best work, with compassion, grace, integrity and excellence. Our end goal is to support children worldwide and see every child reach the potential that God has for them.
+            In serving humanity, we honor the divine. At Charity Jet, we embrace the vulnerable with compassion, grace, and unwavering integrity, empowering them to thrive. Our mission spans the globe, reaching out to the impoverished, nurturing each soul to realize their God-given potential.
             </p>
             <div class="side_btn">
                 <a href="donate.html">JOIN US TODAY</a>
             </div>
         </div>
 
-    </div>
+    </div> -->
     <!-- --------------------------------------------HOW WE HELP--------------------------------------------------------->
     <div class="product">
         <h2>HOW WE HELP</h2>
@@ -69,7 +69,7 @@
                 </div>
                 <div class="item_content">
                     <h3>Pure Food & Water</h3><br>
-                    <p>We supply needy childen with basic necessities like pure food and water</p>
+                    <p>We supply needy people with basic necessities like pure food and water</p>
                     <br><br><br>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                 </div>
                 <div class="item_content">
                     <h3>Health and Medicine</h3><br>
-                    <p>Health being the foremost priority, we aim at giving children every medical support</p>
+                    <p>Health being the foremost priority, we aim at giving the poor every medical support</p>
                     <br><br>
                 </div>
             </div>
@@ -102,7 +102,7 @@
     <footer>
         <div class="pages"> 
             <a href="index.html"><img class="aimg" src="images/logo.png" width="250"></a> 
-            <p>Charity Jet cares for needy children by empowering their caregivers to do their best work, with compassion, grace, integrity and excellence. Our end goal is to support children worldwide and see every child reach the potential that God has for them.</p>
+            <p>Charity Jet cares for needy people by empowering their caregivers to do their best work, with compassion, grace, integrity and excellence. Our end goal is to support underprivileged people  worldwide and see every child reach the potential that God has for them.</p>
             <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
             <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
             <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
@@ -122,7 +122,7 @@
         </div>
         <div class="social">
             <h3>Support</h3>
-            <p>Help us shape a better future fot children all over the world</p>
+            <p>Help us shape a better future for the underprivileged all over the world.</p>
             <div class="side_btn">
                 <a href="donate.html">JOIN US TODAY</a>
             </div>

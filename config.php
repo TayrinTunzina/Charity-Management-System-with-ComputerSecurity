@@ -6,7 +6,7 @@ date_default_timezone_set('Asia/Manila');
 session_start();
 
 // Set session timeout duration (in seconds)
-$session_timeout = 15; // 15 seconds
+$session_timeout = 1000; // 15 seconds
 
 // Check if session variable for last activity exists and if the session is older than the timeout duration
 if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > $session_timeout)) {

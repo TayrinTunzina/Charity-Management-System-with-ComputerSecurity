@@ -4,6 +4,7 @@ if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'donor') {
     redirect('index.php');
 }
 ?>
+
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -57,9 +58,10 @@ if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'donor') {
                 
                 // Disable the donate button and change status to inactive if fund goal is reached
                 if ($percentage >= 100) {
-                    echo '<button class="btn btn-flat btn-success float-right" type="button" id="donation" data-toggle="modal" data-target="#paymentModal" data-blog-id="' . $row['id'] . '" disabled>Donate Now</button>';
+                    // echo '<button class="btn btn-flat btn-success float-right" type="button" id="donation" data-toggle="modal" data-target="#paymentModal" data-blog-id="' . $row['id'] . '" disabled>Donate Now</button>';
+                    echo '<button class="btn btn-flat btn-success float-right donation-button" type="button" id="donation" data-toggle="modal" data-target="#paymentModal" data-blog-id="' . $row['id'] . '" disabled>Donate Now</button>';
                 } else {
-                    echo '<button class="btn btn-flat btn-success float-right" type="button" id="donation" data-toggle="modal" data-target="#paymentModal" data-blog-id="' . $row['id'] . '">Donate Now</button>';
+                    echo '<button class="btn btn-flat btn-success float-right donation-button" type="button" id="donation" data-toggle="modal" data-target="#paymentModal" data-blog-id="' . $row['id'] . '">Donate Now</button>';
                 }
                 
                 echo '</div>';
@@ -71,6 +73,19 @@ if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'donor') {
         ?>
     
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const donationButtons = document.querySelectorAll('.donation-button');
+
+        donationButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const blogId = button.getAttribute('data-blog-id');
+                document.getElementById('blogIdInput').value = blogId;
+            });
+        });
+    });
+</script>
 
 <!-- Payment Modal -->
 <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
@@ -85,6 +100,11 @@ if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'donor') {
             <div class="modal-body">
                 <!-- Add payment form with OTP verification -->
                 <form id="paymentForm" action="otp.php" method="POST">
+                    <div class="form-group">
+                        <label>Donation ID: </label>
+                        <input type="text" id="blogIdInput" name="blog_id" readonly>
+                    </div>
+
                     <div class="form-group">
                         <label for="paymentMethod">Payment Method:</label>
                         <select class="form-control" id="paymentMethod" name="paymentMethod">

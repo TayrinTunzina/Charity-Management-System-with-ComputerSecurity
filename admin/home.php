@@ -6,7 +6,7 @@
               <span class="info-box-icon bg-light elevation-1"><i class="fas fa-book-open"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Total Donations Today</span>
+                <span class="info-box-text">Total Donations Raised</span>
                 <span class="info-box-number text-right">
                 <?php 
                     $donation = $conn->query("SELECT sum(fund_raised) as total FROM donations")->fetch_assoc()['total'];

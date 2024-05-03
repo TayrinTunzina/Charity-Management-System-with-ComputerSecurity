@@ -7,6 +7,9 @@ require 'vendor/autoload.php'; // Include PHPMailer autoload.php file
 $to = $_POST['email']; // Get the email address from the form
 $otp = $_POST['otp']; // Get the OTP from the form
 
+$amount = $_POST['amount'];// Retrieve the amount from the form data
+$blog_id = $_POST['blog_id'];
+
 // Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
@@ -27,7 +30,9 @@ try {
     //Content
     $mail->isHTML(true); // Set email format to HTML
     $mail->Subject = 'OTP Verification';
-    $mail->Body = 'Your OTP for verification is: ' . $otp;
+    // $mail->Body = 'Your OTP for verification is: ' . $otp;
+    // Amount to the email body
+    $mail->Body = 'Your OTP for verification is: ' . $otp . '<br>Donation ID: ' . $blog_id . '<br>Amount: ' . $amount;
 
     $mail->send();
     $message = 'Message has been sent';
@@ -108,13 +113,18 @@ try {
 </head>
 
 <body>
+
     <div class="card">
         <?php if (isset($message)) : ?>
             <div class="message <?php echo $message ? 'success' : 'error'; ?>">
                 <?php echo $message; ?>
             </div>
         <?php endif; ?>
-        <form action="submitotp.php" method="POST">
+        <form action="submitotp.php" method="POST"> <!-- Change action to submit.php -->
+            <!-- Add hidden input fields for blog_id and amount -->
+            <input type="hidden" name="blog_id" value="<?php echo $blog_id; ?>">
+            <input type="hidden" name="amount" value="<?php echo $amount; ?>">
+
             <p>OTP sent to the email ID</p>
             <input type="number" name="checkotp" placeholder="Enter OTP">
             <input type="hidden" name="otp" value="<?php echo $otp; ?>">
