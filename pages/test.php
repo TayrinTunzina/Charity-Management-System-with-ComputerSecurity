@@ -8,7 +8,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:title" content="test" />
 <meta property="og:description" content="" />
-<meta property="og:image" content="http://localhost/charity/dist/img/no-image-available.png" />
+<meta property="og:image" content="http://localhost/charity/uploads/blog_uploads/banners/4_banner.png" />
 <meta property="og:url" content="http://localhost/charity/pages/test.php" />
 <?php require_once('../inc/page_header.php') ?>
 </head>
@@ -17,6 +17,6 @@
 <input name="blog_id" value="a87ff679a2f3e71d9181a67b7542122c" type="hidden">
 <hr>
 <span class='text-muted'><i class='fa fa-calendar-day'></i> Published: Mar 12,2024 12:31 PM</span>
-<center><img src="http://localhost/charity/dist/img/no-image-available.png" class="img-thumbnail img-banner" alt="http://localhost/charity/pages/test.php" /></center>
+<center><img src="http://localhost/charity/uploads/blog_uploads/banners/4_banner.png" class="img-thumbnail img-banner" alt="http://localhost/charity/pages/test.php" /></center>
 
 <?php include(base_app.'inc/body_block_end.php') ?>
