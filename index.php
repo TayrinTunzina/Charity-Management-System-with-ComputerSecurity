@@ -38,7 +38,7 @@
                 <span>Give a helping hand to poor who NEED it!</span>
             </h2>
             <div class="btn">
-                <a href="donate.html">DONATE NOW</a>
+                <a href="signup.php">DONATE NOW</a>
             </div>
         </div>
     </div>

@@ -1,20 +1,12 @@
 <?php
 require_once('config.php'); // Include your config file
 
-// Check if the form has been submitted and CAPTCHA is clicked
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['g-recaptcha-response'])) {
-    // Verify the CAPTCHA response
-    $secret = "6LcXss8pAAAAACNZBgmmBMLNl0Hq1Tjc4u7TRiVp";
-    $response = $_POST['g-recaptcha-response'];
-    $remoteip = $_SERVER['REMOTE_ADDR'];
-
-    $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$response&remoteip=$remoteip";
-    $response = file_get_contents($url);
-    $responseKeys = json_decode($response, true);
-
-    // Check if CAPTCHA verification was successful
-    if ($responseKeys["success"]) {
+// Check if the form has been submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Verify the captcha response
+    if (isset($_POST['captcha']) && $_POST['captcha'] == $_SESSION['captcha']) {
         // CAPTCHA verification passed, process the form data
+        
         // Retrieve form data
         $name = $_POST['name'];
         $password = $_POST['password'];
@@ -33,11 +25,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['g-recaptcha-response']
             }
         }
 
-        // Hash the password if it's not empty
-        if(!empty($password)){
-            $password = md5($password);
+        function customHash($password) {
+            // Custom hashing algorithm
+            $hash = 0;
+            $len = strlen($password);
+            
+            for ($i = 0; $i < $len; $i++) {
+                $hash += ord($password[$i]);
+            }
+            
+            return $hash;
         }
-
+        
+        // Hash the password if it's not empty
+        if (!empty($password)) {
+            $password = customHash($password);
+        }
+        
         // Prepare and execute the SQL query to update user profile
         $userId = $_settings->userdata('id');
         $sql = "UPDATE users SET name='$name'";
@@ -64,6 +68,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['g-recaptcha-response']
         exit();
     }
 }
+
+// Generate a random captcha code and store it in the session
+$_SESSION['captcha'] = rand(1000, 9999);
 ?>
 
 
@@ -151,7 +158,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['g-recaptcha-response']
         input[type="text"],
         input[type="password"] {
             width: 60%;
-            height: 40px; /* Adjust the height of the input field */
+            height: 32px; /* Adjust the height of the input field */
             padding: 10px; /* Add padding to the input field */
             margin-bottom: 5px; /* Add spacing between input fields */
             border: 1px solid #ccc;
@@ -180,17 +187,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['g-recaptcha-response']
             <!-- Name input field -->
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" value="<?php echo ucwords($_settings->userdata('name')); ?>" required><br><br>
-            
+
             <!-- Password input field -->
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" value="<?php echo $_settings->userdata('password'); ?>" required><br><br>
-            
+
+            <!-- Display the CAPTCHA image -->
+            <img src="captcha.php" alt="CAPTCHA Image"><br><br>
+
             <!-- CAPTCHA field -->
-            <div class="g-recaptcha" data-sitekey="6LcXss8pAAAAAEs57z5CoMy7XbVNblKEStdrS2eT" style="margin: 0 70px;"></div><br><br>
-            
+            <label for="captcha">Enter Captcha:</label>
+            <input type="text" id="captcha" name="captcha" required><br><br>
+
+            <!-- Input fields for user information -->
+
             <!-- Submit button -->
             <button type="submit">Update Profile</button>
         </form>
+
     </div>
 </div>
 

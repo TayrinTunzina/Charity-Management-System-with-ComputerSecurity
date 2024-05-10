@@ -109,7 +109,7 @@ if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'donor') {
                         <label for="paymentMethod">Payment Method:</label>
                         <select class="form-control" id="paymentMethod" name="paymentMethod">
                             <option value="" selected disabled>Select Payment Method</option>
-                            <option value="cash">Cash</option>
+                            <option value="cash">Mobile Banking</option>
                             <option value="card">Card</option>
                         </select>
                     </div>
